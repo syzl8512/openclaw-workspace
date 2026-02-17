@@ -32,3 +32,9 @@ Thumbs.db
 # OpenClaw specific
 .openclaw/
 *.log
+
+# Large files
+*.zip
+*.tar.gz
+*.mp4
+*.mov
