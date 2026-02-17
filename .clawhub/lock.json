@@ -56,6 +56,10 @@
     "supabase": {
       "version": "1.0.0",
       "installedAt": 1771291515265
+    },
+    "aliyun-tts": {
+      "version": "1.0.0",
+      "installedAt": 1771292420348
     }
   }
 }

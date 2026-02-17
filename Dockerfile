@@ -50,6 +50,9 @@ COPY --from=builder /root/.openclaw/workspace /root/.openclaw/workspace
 # 创建数据目录
 RUN mkdir -p /root/.openclaw/data
 
+# 配置环境变量（API Keys）
+ENV AMAP_API_KEY=85ce00fba0d657eb3138edc562b0183d
+
 # 暴露端口
 EXPOSE 18789
 
