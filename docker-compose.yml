@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  openclaw-workspace:
+    build: .
+    container_name: openclaw-workspace
+    ports:
+      - "18789:18789"
+    volumes:
+      - openclaw-data:/root/.openclaw
+      - ./workspace:/root/.openclaw/workspace:ro
+    environment:
+      - TZ=UTC
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:18789/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+volumes:
+  openclaw-data:
+    driver: local

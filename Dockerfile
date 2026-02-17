@@ -1,18 +1,12 @@
 # OpenClaw Workspace Docker Image
-# 基于官方 OpenClaw 镜像，预先配置好工作空间
+# 完整的工作空间镜像，带所有配置和技能
 
 FROM node:22-alpine AS builder
 
-# 安装构建工具
-RUN apk add --no-cache git
-
 WORKDIR /workspace
 
-# 复制 package.json（如果有）
-# COPY package*.json ./
-
-# 安装依赖
-# RUN npm install
+# 复制整个 workspace
+COPY . .
 
 FROM node:22-alpine
 
@@ -23,25 +17,23 @@ RUN apk add --no-cache \
     bash \
     python3 \
     make \
-    g++
+    g++ \
+    && rm -rf /var/cache/apk/*
 
 # 安装 OpenClaw CLI
 RUN npm install -g openclaw
 
-# 创建工作目录
-RUN mkdir -p /root/.openclaw/workspace
-
-# 复制工作空间文件
-COPY --from=builder /workspace /root/.openclaw/workspace
-
 # 设置工作目录
 WORKDIR /root/.openclaw/workspace
 
-# 初始化 OpenClaw 配置（如果需要）
-# RUN openclaw config set ...
+# 复制 workspace 内容
+COPY --from=builder /workspace /root/.openclaw/workspace
+
+# 创建数据目录
+RUN mkdir -p /root/.openclaw/data
 
 # 暴露端口
 EXPOSE 18789
 
-# 启动命令
+# 启动网关
 CMD ["openclaw", "gateway", "run"]
