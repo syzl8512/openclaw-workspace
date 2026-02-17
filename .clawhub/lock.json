@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "skills": {
+    "tavily-search": {
+      "version": "1.0.0",
+      "installedAt": 1771250839643
+    },
+    "claude-optimised": {
+      "version": "1.0.1",
+      "installedAt": 1771250913080
+    },
+    "backend-patterns": {
+      "version": "0.1.2",
+      "installedAt": 1771250945336
+    },
+    "markdown-converter": {
+      "version": "1.0.0",
+      "installedAt": 1771253007953
+    }
+  }
+}
