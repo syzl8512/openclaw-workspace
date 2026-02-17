@@ -16,6 +16,26 @@
     "markdown-converter": {
       "version": "1.0.0",
       "installedAt": 1771253007953
+    },
+    "excel-xlsx": {
+      "version": "1.0.0",
+      "installedAt": 1771290728209
+    },
+    "sheet-cog": {
+      "version": "1.0.3",
+      "installedAt": 1771290739629
+    },
+    "pptx-2": {
+      "version": "0.1.1",
+      "installedAt": 1771290754432
+    },
+    "data-analysis": {
+      "version": "1.0.0",
+      "installedAt": 1771290794902
+    },
+    "word-docx": {
+      "version": "1.0.0",
+      "installedAt": 1771290806635
     }
   }
 }
