@@ -36,6 +36,26 @@
     "word-docx": {
       "version": "1.0.0",
       "installedAt": 1771290806635
+    },
+    "mineru": {
+      "version": "1.0.1",
+      "installedAt": 1771291400581
+    },
+    "notebooklm-cli": {
+      "version": "0.1.0",
+      "installedAt": 1771291409279
+    },
+    "gaodemapskill": {
+      "version": "1.0.0",
+      "installedAt": 1771291430673
+    },
+    "edge-tts": {
+      "version": "2.0.0",
+      "installedAt": 1771291450076
+    },
+    "supabase": {
+      "version": "1.0.0",
+      "installedAt": 1771291515265
     }
   }
 }
