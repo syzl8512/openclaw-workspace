@@ -1,5 +1,5 @@
 # OpenClaw Workspace Docker Image
-# 完整的工作空间镜像，带所有配置和技能
+# 完整的工作空间镜像，带文档处理和数据分析技能
 
 FROM node:22-alpine AS builder
 
@@ -7,6 +7,19 @@ WORKDIR /workspace
 
 # 复制整个 workspace
 COPY . .
+
+# 安装 Python 依赖
+RUN apk add --no-cache \
+    python3 \
+    py3-pip \
+    py3-pillow \
+    && pip3 install --no-cache-dir "markitdown[pptx]"
+
+# 安装 LibreOffice 和 Poppler
+RUN apk add --no-cache \
+    libreoffice \
+    poppler-utils \
+    && rm -rf /var/cache/apk/*
 
 FROM node:22-alpine
 
@@ -16,18 +29,23 @@ RUN apk add --no-cache \
     curl \
     bash \
     python3 \
-    make \
-    g++ \
+    py3-pip \
+    py3-pillow \
+    libreoffice \
+    poppler-utils \
     && rm -rf /var/cache/apk/*
 
 # 安装 OpenClaw CLI
 RUN npm install -g openclaw
 
+# 安装 Node.js PPT 生成库
+RUN npm install -g pptxgenjs
+
 # 设置工作目录
 WORKDIR /root/.openclaw/workspace
 
 # 复制 workspace 内容
-COPY --from=builder /workspace /root/.openclaw/workspace
+COPY --from=builder /root/.openclaw/workspace /root/.openclaw/workspace
 
 # 创建数据目录
 RUN mkdir -p /root/.openclaw/data

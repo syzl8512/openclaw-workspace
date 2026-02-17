@@ -10,13 +10,12 @@ services:
       - openclaw-data:/root/.openclaw
       - ./workspace:/root/.openclaw/workspace:ro
     environment:
-      - TZ=UTC
+      - TZ=Asia/Shanghai
+      - LANG=C.UTF-8
+      - LC_ALL=C.UTF-8
     restart: unless-stopped
-    healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:18789/health"]
-      interval: 30s
-      timeout: 10s
-      retries: 3
+    stdin_open: true
+    tty: true
 
 volumes:
   openclaw-data:
