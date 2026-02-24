@@ -1,0 +1,65 @@
+{
+  "version": 1,
+  "skills": {
+    "tavily-search": {
+      "version": "1.0.0",
+      "installedAt": 1771250839643
+    },
+    "claude-optimised": {
+      "version": "1.0.1",
+      "installedAt": 1771250913080
+    },
+    "backend-patterns": {
+      "version": "0.1.2",
+      "installedAt": 1771250945336
+    },
+    "markdown-converter": {
+      "version": "1.0.0",
+      "installedAt": 1771253007953
+    },
+    "excel-xlsx": {
+      "version": "1.0.0",
+      "installedAt": 1771290728209
+    },
+    "sheet-cog": {
+      "version": "1.0.3",
+      "installedAt": 1771290739629
+    },
+    "pptx-2": {
+      "version": "0.1.1",
+      "installedAt": 1771290754432
+    },
+    "data-analysis": {
+      "version": "1.0.0",
+      "installedAt": 1771290794902
+    },
+    "word-docx": {
+      "version": "1.0.0",
+      "installedAt": 1771290806635
+    },
+    "mineru": {
+      "version": "1.0.1",
+      "installedAt": 1771291400581
+    },
+    "notebooklm-cli": {
+      "version": "0.1.0",
+      "installedAt": 1771291409279
+    },
+    "gaodemapskill": {
+      "version": "1.0.0",
+      "installedAt": 1771291430673
+    },
+    "edge-tts": {
+      "version": "2.0.0",
+      "installedAt": 1771291450076
+    },
+    "supabase": {
+      "version": "1.0.0",
+      "installedAt": 1771291515265
+    },
+    "aliyun-tts": {
+      "version": "1.0.0",
+      "installedAt": 1771292420348
+    }
+  }
+}
